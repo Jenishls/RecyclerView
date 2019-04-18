@@ -1,22 +1,52 @@
 package adapter;
 
+import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.recyclerview.R;
 
-import de.hdodenhof.circleimageview.CircleImageView;
+import java.util.List;
 
-public class ContactsAdapter {
+import de.hdodenhof.circleimageview.CircleImageView;
+import model.Contacts;
+
+public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.ContactsViewHolder>{
+    Context mContext;
+    List<Contacts> contactsList;
+
+    public ContactsAdapter(Context mContext, List<Contacts> contactsList) {
+        this.mContext = mContext;
+        this.contactsList = contactsList;
+    }
+
+
+    @NonNull
+    @Override
+    public ContactsViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+        return null;
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull ContactsViewHolder contactsViewHolder, int i) {
+
+    }
+
+    @Override
+    public int getItemCount() {
+        return 0;
+    }
+
     public class ContactsViewHolder extends RecyclerView.ViewHolder{
-        CircleImageView imgProfie;
+        CircleImageView imgProfile;
         TextView tvName, tvPhone;
 
         public ContactsViewHolder(@NonNull View itemView) {
             super(itemView);
-            imgProfie = itemView.findViewById(R.id.imgView);
+            imgProfile = itemView.findViewById(R.id.imgView);
             tvName = itemView.findViewById(R.id.tvName);
             tvPhone = itemView.findViewById(R.id.tvPhone);
         }
